@@ -1,6 +1,8 @@
 @props([
     'align' => 'left',
     'width' => '',
+    'fixLeft'=> false,
+    'fixRight'=> false,
     'sortable' => false,
 ])
 
@@ -13,9 +15,23 @@
         'center' => 'text-center',
     ][$align] ?? 'text-left';
 
+    $styleClasses = "";
+    if($widthClass != null){
+        $styleClasses .= "width:$widthClass;";
+    }
+    if($fixLeft){
+        $styleClasses .= "position:sticky; left:0; z-index:1";
+    }
+    if($fixRight){
+        $styleClasses .= "position:sticky; right:0; z-index:1";
+    }
+
 @endphp
 
-<th @if($widthClass != null) style="width:{{ $widthClass }}" @endif {{ $attributes->merge(['class' => 'px-6 py-3 bg-gray-400 ' .$textAlignClass])->only('class') }}>
+<th @if($styleClasses != null) 
+        style="{{ $styleClasses }}" 
+    @endif 
+    {{ $attributes->merge(['class' => 'px-6 py-3 bg-gray-400 ' .$textAlignClass])->only('class') }}>
     @if (!$_sortable)
         <span class="text-xs font-bold leading-4 text-black uppercase tracking-wider">
             {{ $slot }}

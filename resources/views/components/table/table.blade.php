@@ -3,7 +3,7 @@
     'body',
 ])
 <div class="align-middle min-w-full overflow-x-auto shadow overflow-hidden sm:rounded-lg">
-    <table class="min-w-full divide-y divide-violet-50 table-fixed">
+    <table class="relative min-w-full divide-y divide-violet-50 table-fixed">
         <thead>
             {{-- @if($isMulti)
                 <x-table.heading width="70px" align="center">
