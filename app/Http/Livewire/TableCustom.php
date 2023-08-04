@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use App\View\Components\Table\Table;
 use Livewire\Component;
 
 class TableCustom extends Component
 {
+    public $_id;
     public $datas = array(
         [
             'id' => 1,
@@ -35,6 +35,12 @@ class TableCustom extends Component
         ]
         
     );
+
+    public function getById($id, $name, $age)
+    {
+        dd('id='. $id .' -name = '. $name .' -age = '. $age);
+    }
+
     public function render()
     {
         return view('livewire.table-custom');

@@ -22,9 +22,9 @@
     if($fixLeft){
         $styleClasses .= "position:sticky; left:0; z-index:1";
     }
-    if($fixRight){
-        $styleClasses .= "position:sticky; right:0; z-index:1";
-    }
+    // if($fixRight){
+    //     $styleClasses .= "position:sticky; right:0; z-index:1";
+    // }
 
 @endphp
 

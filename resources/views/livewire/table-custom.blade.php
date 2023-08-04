@@ -4,7 +4,7 @@
             <x-table.heading sortable width="80px" fixLeft>Id</x-table.heading>
             <x-table.heading sortable>name</x-table.heading>
             <x-table.heading sortable width="180px" align="center">age</x-table.heading>
-            <x-table.heading width="120px" align="center" fixRight></x-table.heading>
+            <x-table.heading width="120px" align="center"></x-table.heading>
         </x-slot:header>
 
         <x-slot:body>
@@ -23,14 +23,14 @@
                         {{ $dt['age'] }}
                     </x-table.cell>
 
-                    <x-table.cell align="center" fixRight>
+                    <x-table.cell align="center">
 
-                        <x-button-dropdown>
-                            <x-dropdown-item.dropdown-item href="edit">
+                        <x-button-dropdown idButton="{{ $dt['id'] }}">
+                            <x-dropdown-item.dropdown-item wclick="getById({{ $dt['id'] }}, '{{ $dt['name'] }}', '{{ $dt['age'] }}')">
                                 <i class="fa-regular fa-pen-to-square"></i> Sửa
                             </x-dropdown-item.dropdown-item>
 
-                            <x-dropdown-item.dropdown-item href="delete">
+                            <x-dropdown-item.dropdown-item href="#">
                                 <i class="fa-regular fa-trash-can"></i> Xóa
                             </x-dropdown-item.dropdown-item>
 

@@ -20,9 +20,9 @@
     if($fixLeft){
         $styleClasses .= "position:sticky; left:0; z-index:1; background-color: #FFFFFF;";
     }
-    if($fixRight){
-        $styleClasses .= "position:sticky; right:0; z-index:1; background-color: #FFFFFF;";
-    }
+    // if($fixRight){
+    //     $styleClasses .= "position:sticky; right:0; z-index:1; background-color: #FFFFFF;";
+    // }
 
 @endphp
 
